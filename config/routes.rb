@@ -1,17 +1,18 @@
 Rails.application.routes.draw do
+  # Routes for the Todo resource:
 
   # CREATE
-  post("/insert_todo", { :controller => "todos", :action => "create" })
+  post("/insert_todo", { :controller => "todo", :action => "create" })
 
   # READ
-  get("/", { :controller => "todos", :action => "index" })
+  get("/", { :controller => "todo", :action => "index" })
   # get("/:path_id", { :controller => "todos", :action => "show" })
 
   # UPDATE
- post("/modify_todo/:path_id", { :controller => "todos", :action => "update" })
+ post("/modify_todo/:path_id", { :controller => "todo", :action => "update" })
 
   # DELETE
-  get("/delete_todo/:path_id", { :controller => "todos", :action => "destroy" })
+  get("/delete_todo/:path_id", { :controller => "todo", :action => "destroy" })
 
   # Routes for the User account:
 
@@ -38,5 +39,7 @@ Rails.application.routes.draw do
 
   # SIGN OUT
   post("/user_sign_out", { :controller => "user_authentication", :action => "destroy_cookies" })
+
+
 
 end

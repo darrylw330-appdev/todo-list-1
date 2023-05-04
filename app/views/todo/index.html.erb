@@ -1,30 +1,30 @@
-
 <h1>Your todo list</h1>
 
-    <h2>
-      Add a new todo
-    </h2>
+  <h2>
+    Add a new todo
+  </h2>
 
-    <form action="/insert_todo" method="post">
-      <div>
-        <label for="content_box">
-          Describe the task:
-        </label>
+  <form action="/insert_todo" method="post">
+    <div>
+      <label for="content_box">
+         Describe the task:
+      </label>
 
-        <input type="text" id="content_box" name="query_content">
-      </div>
+     <input type="text" id="content_box" name="query_content">
+    </div>
 
-      <button>
-        Add to Next Up
-      </button>
+    <button>
+      Add to Next Up
+    </button>
     </form>
 
-<div class="next_up" style="color: darkorange;">
+  <div class="next_up" style="color: darkorange;">
   <h2>Next Up</h2>
-      <ul>
-        <% @list_of_todos.each do |todo| %>
-      <li><%= todo.content %><a href="/delete_todo/<%= todo.id %>">Delete</a><p><%=time_ago_in_words(todo.created_at)%> ago</p></li>
-        </ul>
+
+     <ul>
+      <% @list_of_todos.each do |todo| %>
+     <li><%= todo.content %><a href="/delete_todo/<%= todo.id %>">Delete</a><p><%=time_ago_in_words(todo.created_at)%> ago</p></li>
+      </ul>
        <form action="/modify_todo/<%=todo.id%>" method="post">
           <input type="hidden" name="query_status" value="next_up">
           <button>Move to In Progress</button>
@@ -48,8 +48,6 @@
     <% end %>
   </ul>
 </div>
-
-
 
 <div class="done" style="color: gray">
   <h2>Done</h2>
