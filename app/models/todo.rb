@@ -11,4 +11,5 @@
 #
 class Todo < ApplicationRecord
   belongs_to :user 
+  def status
 end
