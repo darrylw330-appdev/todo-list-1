@@ -11,5 +11,4 @@ class User < ApplicationRecord
   has_many :todos
   validates :email, :uniqueness => { :case_sensitive => false }
   validates :email, :presence => true
-  
 end
