@@ -38,8 +38,8 @@ Rails.application.routes.draw do
   post("/user_verify_credentials", { :controller => "user_authentication", :action => "create_cookie" })
 
   # SIGN OUT
- # post("/user_sign_out", { :controller => "user_authentication", :action => "destroy_cookies" })
-  delete '/user_sign_out', to: 'user_sessions#destroy', as: :user_sign_out
+  get("/user_sign_out", { :controller => "user_authentication", :action => "destroy_cookies" })
+ # delete '/user_sign_out', to: 'user_sessions#destroy', as: :user_sign_out
 
 
 end
