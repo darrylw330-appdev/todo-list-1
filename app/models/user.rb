@@ -2,7 +2,8 @@
 #
 # Table name: users
 #
-#  id :integer          not null, primary key
+#  id    :integer          not null, primary key
+#  email :string
 #
 class User < ApplicationRecord
   has_many :todos

@@ -10,9 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_04_185525) do
+ActiveRecord::Schema.define(version: 2023_05_05_151016) do
+
+  create_table "todos", force: :cascade do |t|
+  end
 
   create_table "users", force: :cascade do |t|
+    t.string "email"
   end
 
 end
