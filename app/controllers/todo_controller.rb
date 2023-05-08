@@ -1,7 +1,8 @@
 class TodoController < ApplicationController
   def index
     matching_todos = Todo.all
-    @list_of_todos = matching_todos.order({:created_at =>:desc})
+   # @list_of_todos = matching_todos.order({:created_at =>:desc})
+    @list_of_todos = matching_todos.order(created_at: :desc).reject{ |todo| todo.created_at.nil? }
   end
 
   def create

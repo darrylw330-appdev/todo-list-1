@@ -48,7 +48,11 @@
         </form>
       <% end %>
       <% if todo.status == "in_progress" %>
-        <li><%= todo.content %><a href="/delete_todo/<%= todo.id %>">Delete</a>Started <%= time_ago_in_words(todo.updated_at).gsub(/about /, '') %> ago </li>
+        <li><%= todo.content %><a href="/delete_todo/<%= todo.id %>">Delete</a>
+<% if todo.updated_at %>
+  Started <%= time_ago_in_words(todo.updated_at).gsub(/about /, '') %> ago
+<% end %>
+</li>
         <form action="/modify_todo/<%=todo.id%>" method="post">
           <input type="hidden" name="query_status" value="done">
           <button>Move to Done</button>
